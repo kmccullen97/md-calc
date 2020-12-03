@@ -1,0 +1,27 @@
+{
+  "name": "md-calc",
+  "version": "0.1.0",
+  "description": "A markdown extension that calculates tables like excel",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "mocha ./**/*.spec.js --watch",
+    "test:min": "mocha ./**/*.spec.js --watch --reporter min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmccullen97/md-calc.git"
+  },
+  "author": "Kyle McCullen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kmccullen97/md-calc/issues"
+  },
+  "homepage": "https://github.com/kmccullen97/md-calc#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
