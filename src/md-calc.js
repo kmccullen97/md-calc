@@ -1,7 +1,7 @@
 const parser = require("./parser");
 const evaluate = require("./evaluate");
 
-const mdCalcRegex = /mdCalc[\s\S]*?(?=\n\n)/g;
+const mdCalcRegex = /mdCalc[\s\S]*?(?=$|\n\n)/g;
 
 const mdCalc = (text) => {
   return text.replace(mdCalcRegex, (match) => {
