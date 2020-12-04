@@ -3,11 +3,11 @@ const { expect } = require("chai");
 const getValueByCell = require("./get-value-by-cell");
 
 const table = [
-  ["10", "23", "=A1+A2"],
-  ["37", "5", "=B1+B2"],
+  ["10", "23", "=A1+B1"],
+  ["37", "5", "=A2+B2"],
 ];
 
-describe("calc/getValueByCell", () => {
+describe("helpers/getValueByCell", () => {
   it("should work", () => {
     expect("10").to.eql(getValueByCell("A1", table));
   });
@@ -17,7 +17,7 @@ describe("calc/getValueByCell", () => {
   });
 
   it("should work", () => {
-    expect("=A1+A2").to.eql(getValueByCell("C1", table));
+    expect("=A1+B1").to.eql(getValueByCell("C1", table));
   });
 
   it("should work", () => {
@@ -29,7 +29,7 @@ describe("calc/getValueByCell", () => {
   });
 
   it("should work", () => {
-    expect("=B1+B2").to.eql(getValueByCell("C2", table));
+    expect("=A2+B2").to.eql(getValueByCell("C2", table));
   });
 
   it("should not work if table is null", () => {

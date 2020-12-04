@@ -1,3 +1,5 @@
+const { convertCellToPosition } = require("./cell-format-converter");
+
 const getValueByCell = (cell, table) => {
   if (table === null || table === undefined || table.length < 1) {
     throw new Error("Invalid table");
@@ -7,8 +9,7 @@ const getValueByCell = (cell, table) => {
     throw new Error("Invalid cell");
   }
 
-  const col = cell.charCodeAt(0) - 65;
-  const row = parseInt(cell.substr(1, cell.length - 1)) - 1;
+  const [row, col] = convertCellToPosition(cell);
 
   if (row > table.length - 1 || col > table[0].length - 1) {
     throw new Error("Invalid cell location");
