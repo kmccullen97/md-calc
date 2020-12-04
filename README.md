@@ -6,9 +6,9 @@ Markdown calc is the idea to treat markdown tables like an excel workbook.
 
 - Install the package
 
-  `npm install https://github.com/kmccullen97/md-calc#0.1.0`
+  `npm install https://github.com/kmccullen97/md-calc#v0.1.0`
 
-  `yarn add https://github.com/kmccullen97/md-calc#0.1.0`
+  `yarn add https://github.com/kmccullen97/md-calc#v0.1.0`
 
 - Setup test project
 
