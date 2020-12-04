@@ -2,7 +2,7 @@
   "name": "md-calc",
   "version": "0.1.0",
   "description": "A markdown extension that calculates tables like excel",
-  "main": "index.js",
+  "main": "src/md-calc.js",
   "directories": {
     "example": "examples"
   },
@@ -23,5 +23,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.2.1"
+  },
+  "dependencies": {
+    "mathjs": "^8.0.1"
   }
 }
