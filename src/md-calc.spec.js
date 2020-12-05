@@ -1,9 +1,9 @@
-const { expect } = require("chai");
+const { expect } = require('chai');
 
-const mdCalc = require("./md-calc");
+const mdCalc = require('./md-calc');
 
-describe("md-calc", () => {
-  it("Should work", () => {
+describe('md-calc', () => {
+  it('Should work', () => {
     const md = `
 mdCalc
 |Calc Table||
@@ -48,7 +48,7 @@ mdCalc
     expect(mdCalc(md)).to.equal(newMd);
   });
 
-  it("Should work with a mdCalc table at the end of a file", () => {
+  it('Should work with a mdCalc table at the end of a file', () => {
     const md = `
 |Non Calc Table||
 |--|--:|

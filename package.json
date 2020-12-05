@@ -7,8 +7,9 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "mocha ./**/*.spec.js --watch",
-    "test:min": "mocha ./**/*.spec.js --watch --reporter min"
+    "test": "mocha ./**/*.spec.js",
+    "test:min": "mocha ./**/*.spec.js --watch --reporter min",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,9 @@
   "homepage": "https://github.com/kmccullen97/md-calc#readme",
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "2.22.1",
     "mocha": "^8.2.1"
   },
   "dependencies": {
