@@ -1,6 +1,7 @@
 const { expect } = require('chai');
 
 const evaluate = require('./evaluate');
+const { errorText } = require('./constants');
 
 describe('evaluate', () => {
   it('should work', () => {
@@ -43,7 +44,7 @@ describe('evaluate', () => {
     const solved = [
       ['Line 1', 1000],
       ['Line 2', 200],
-      ['Total', 'REF'],
+      ['Total', errorText],
     ];
 
     expect(evaluate(table)).to.eql(solved);
@@ -59,7 +60,7 @@ describe('evaluate', () => {
     const solved = [
       ['Line 1', 1000],
       ['Line 2', 200],
-      ['Total', 'REF'],
+      ['Total', errorText],
     ];
 
     expect(evaluate(table)).to.eql(solved);
@@ -105,7 +106,7 @@ describe('evaluate', () => {
     ];
 
     const solved = [
-      ['Line 1', 'REF'],
+      ['Line 1', errorText],
       ['Line 2', 10],
       ['Total', 10],
     ];
@@ -121,8 +122,8 @@ describe('evaluate', () => {
     ];
 
     const solved = [
-      ['Line 1', 'REF'],
-      ['Line 2', 'REF'],
+      ['Line 1', errorText],
+      ['Line 2', errorText],
       ['Total', 10],
     ];
 
@@ -157,6 +158,14 @@ describe('evaluate', () => {
       ['Line 2', 10],
       ['Total', 10],
     ];
+
+    expect(evaluate(table)).to.eql(solved);
+  });
+
+  it('should show ref when user references a text cell', () => {
+    const table = [['Text', '=A1']];
+
+    const solved = [['Text', errorText]];
 
     expect(evaluate(table)).to.eql(solved);
   });
