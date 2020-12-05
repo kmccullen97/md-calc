@@ -5,7 +5,7 @@ const mdCalcRegex = /mdCalc[\s\S]*?(?=$|\n\n)/g;
 
 const mdCalc = (text) =>
   text.replace(mdCalcRegex, (match) => {
-    const table = parser(match);
+    const table = parser(match.trim('\n'));
 
     const evaluatedData = evaluate(table.data);
     table.data = evaluatedData;
