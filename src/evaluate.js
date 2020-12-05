@@ -2,6 +2,7 @@ const math = require('mathjs');
 
 const getValueByCell = require('./helpers/get-value-by-cell');
 const { convertPositionToCell } = require('./helpers/cell-format-converter');
+const { errorText } = require('./constants');
 
 const matchCellName = /[A-Z][0-9]+/g;
 
@@ -10,7 +11,7 @@ const evaluateCell = (cell, table, prev = null, ref = false) => {
   try {
     cellValue = getValueByCell(cell, table);
   } catch (err) {
-    return 'REF';
+    return errorText;
   }
 
   if (typeof cellValue === 'number') {
@@ -25,19 +26,19 @@ const evaluateCell = (cell, table, prev = null, ref = false) => {
     const evaluatedCell = cellValue
       .replace(matchCellName, (match) => {
         if (match === cell || match === prev) {
-          return 'REF';
+          return errorText;
         }
         return evaluateCell(match, table, cell, true);
       })
       .replace('=', '');
-    if (evaluatedCell.includes('REF')) {
-      return 'REF';
+    if (evaluatedCell.includes(errorText)) {
+      return errorText;
     }
     return math.evaluate(evaluatedCell);
   }
 
   if (ref === true && typeof cellValue === 'string') {
-    return 'REF';
+    return errorText;
   }
 
   return cellValue;

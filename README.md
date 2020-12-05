@@ -31,8 +31,6 @@ Markdown calc is the idea to treat markdown tables like an excel workbook.
   | Jan           | 100    |
   | Feb           | 350    |
   | Total         | =B1+B2 |
-
-  ## mdCalc cant be the end of file (known bug with regex)
   ```
 
 - Run the code
@@ -47,6 +45,8 @@ Markdown calc is the idea to treat markdown tables like an excel workbook.
   | Feb           | 350 |
   | Total         | 450 |
   ```
+
+  `!REF` will display in a cell if the reference is invalid.
   
 ## Contributing
 
