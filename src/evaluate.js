@@ -5,7 +5,7 @@ const { convertPositionToCell } = require('./helpers/cell-format-converter');
 
 const matchCellName = /[A-Z][0-9]+/g;
 
-const evaluateCell = (cell, table, prev = null) => {
+const evaluateCell = (cell, table, prev = null, ref = false) => {
   let cellValue;
   try {
     cellValue = getValueByCell(cell, table);
@@ -27,13 +27,17 @@ const evaluateCell = (cell, table, prev = null) => {
         if (match === cell || match === prev) {
           return 'REF';
         }
-        return evaluateCell(match, table, cell);
+        return evaluateCell(match, table, cell, true);
       })
       .replace('=', '');
     if (evaluatedCell.includes('REF')) {
       return 'REF';
     }
     return math.evaluate(evaluatedCell);
+  }
+
+  if (ref === true && typeof cellValue === 'string') {
+    return 'REF';
   }
 
   return cellValue;

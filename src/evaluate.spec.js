@@ -160,4 +160,12 @@ describe('evaluate', () => {
 
     expect(evaluate(table)).to.eql(solved);
   });
+
+  it('should show ref when user references a text cell', () => {
+    const table = [['Text', '=A1']];
+
+    const solved = [['Text', 'REF']];
+
+    expect(evaluate(table)).to.eql(solved);
+  });
 });
