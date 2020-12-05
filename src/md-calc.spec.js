@@ -73,4 +73,31 @@ mdCalc
 |Total|1200|`;
     expect(mdCalc(md)).to.equal(newMd);
   });
+
+  it('Should work with a mdCalc table at the end of a file with new line', () => {
+    const md = `
+|Non Calc Table||
+|--|--:|
+|Line 1|1000|
+
+mdCalc
+|Calc Table||
+|--|--:|
+|Line 1|1000|
+|Line 2|200|
+|Total|=B1+B2|
+`;
+
+    const newMd = `
+|Non Calc Table||
+|--|--:|
+|Line 1|1000|
+
+|Calc Table||
+|--|--:|
+|Line 1|1000|
+|Line 2|200|
+|Total|1200|`;
+    expect(mdCalc(md)).to.equal(newMd);
+  });
 });
