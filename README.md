@@ -1,6 +1,7 @@
 # Markdown Calc
 
 Markdown calc is the idea to treat markdown tables like an excel workbook.
+
 ## Getting Started
 
 - Install the package
@@ -12,10 +13,10 @@ Markdown calc is the idea to treat markdown tables like an excel workbook.
   index.js
 
   ```js
-  const fs = require("fs");
-  const mdCalc = require("md-calc");
+  const fs = require('fs');
+  const mdCalc = require('md-calc');
 
-  const input = fs.readFileSync("./input.md", "utf-8");
+  const input = fs.readFileSync('./input.md', 'utf-8');
 
   const output = mdCalc(input);
 
@@ -47,10 +48,28 @@ Markdown calc is the idea to treat markdown tables like an excel workbook.
   ```
 
   `!REF` will display in a cell if the reference is invalid.
-  
+
+## Features
+
+- **Basic Math**
+  - all calculations are evaluated with math.js
+  - `=1.2 * (2 + 4.5)`
+  - `=sin(45 deg) ^ 2`
+- **Cell Reference**
+  - `=A1`
+  - `=(A2+B3)/D2`
+- **Formatting**
+  - Currency: `[C]=1156.54` -> `$1,156.54`
+  - Percent: `[P]=0.5` -> `50%`
+  - Decimal: `{2}=0.4313` -> `0.43`
+  - Multiple: `[P]{1}=0.453678` -> `45.4%`
+
 ## Contributing
 
-### Setting up the repository
+Have a feature request or find a bug? Feel free to create a issue or pull request.
+
+### Running the code
+
 - Clone the repository
   `git clone https://github.com/kmccullen97/md-calc.git`
 
@@ -62,4 +81,3 @@ Markdown calc is the idea to treat markdown tables like an excel workbook.
 
 - Run the tests
   `yarn test` or `yarn test:min`
-
