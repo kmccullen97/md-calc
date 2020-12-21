@@ -61,7 +61,7 @@ Markdown calc is the idea to treat markdown tables like an excel workbook.
 - **Formatting**
   - Currency: `[C]=1156.54` -> `$1,156.54`
   - Percent: `[P]=0.5` -> `50%`
-  - Decimal: `{2}=0.4313` -> `0.4`
+  - Decimal: `{2}=0.4313` -> `0.43`
   - Multiple: `[P]{1}=0.453678` -> `45.4%`
 
 ## Contributing

@@ -1,6 +1,6 @@
 {
   "name": "md-calc",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A markdown extension that calculates tables like excel",
   "main": "src/md-calc.js",
   "types": "src/md-calc.d.ts",
